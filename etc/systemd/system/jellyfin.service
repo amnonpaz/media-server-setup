@@ -1,0 +1,13 @@
+[Unit]
+Description=Jellyfin Server
+Requires=docker.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+WorkingDirectory=/home/user/jellyfin
+ExecStart=docker-compose up -d
+ExecStop=docker-compose down
+
+[Install]
+WantedBy=multi-user.target

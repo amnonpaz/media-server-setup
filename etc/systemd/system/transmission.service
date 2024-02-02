@@ -1,0 +1,13 @@
+[Unit]
+Description=Transmission client
+Requires=docker.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+WorkingDirectory=/home/user/transmission
+ExecStart=docker-compose up -d
+ExecStop=docker-compose down
+
+[Install]
+WantedBy=multi-user.target
